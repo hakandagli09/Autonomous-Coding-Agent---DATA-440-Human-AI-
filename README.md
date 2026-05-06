@@ -107,9 +107,9 @@ deterministic:
 
 - `temperature = 1` is used for both `generate_code` and `fix_code`.
 - **No `seed` is passed** to the Moonshot API.
-- The Moonshot endpoint does not currently guarantee deterministic outputs
-  even at `temperature = 0`, so re-running the scripts is expected to
-  produce slightly different per-problem outcomes.
+- The Moonshot endpoint does not currently guarantee deterministic outputs,
+  so re-running the scripts is expected to produce slightly different
+  per-problem outcomes.
 
 For this reason, the **canonical artifacts of the reported run are the CSVs
 checked into the repo**:
