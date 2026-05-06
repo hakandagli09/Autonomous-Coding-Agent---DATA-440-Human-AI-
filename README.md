@@ -124,18 +124,3 @@ headline numbers above. The Streamlit app reads these files directly, so a
 grader can inspect every claim without re-running the API. Re-running the
 `eval_*.py` scripts will overwrite these CSVs with a fresh sample from the
 same distribution, not reproduce them exactly.
-
----
-
-## Future work
-
-- **Legacy-model comparison.** Run the same harness against an older
-  Moonshot model (e.g. Kimi K1.5 or Moonshot-v1) to quantify the
-  generation-over-generation improvement on the same failure-mode
-  taxonomy. The harness is model-agnostic — only the model id changes.
-- **Ablate the self-correction loop.** Compare blind retry (no stderr)
-  vs. error-informed retry to isolate how much of the recovery comes
-  from feedback vs. resampling.
-- **Retry-budget sweep.** 1 vs. 3 vs. 5 retries — measure marginal
-  recovery per extra call. Likely to help most on HumanEval+ residual
-  failures like `find_zero`, where a single round isn't enough.
