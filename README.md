@@ -30,9 +30,9 @@ Each script writes the same CSV schema so the Streamlit renderer is shared.
 
 | Script | Dataset | Purpose |
 |---|---|---|
-| `eval_mbpp.py` | MBPP sanitized (50) | Natural-language tasks with hidden tests — exposes *spec ambiguity*. |
-| `eval_humaneval.py` | HumanEval (164) | Signatures + docstrings given — removes naming noise to test *core reasoning*. |
-| `eval_humanevalplus.py` | HumanEval+ (164) | Same problems, ~80× more tests — exposes *edge-case bugs* HumanEval misses. |
+| `eval_mbpp.py` | MBPP sanitized (974 problems; 50 sampled) | Natural-language tasks with hidden tests — exposes *spec ambiguity*. |
+| `eval_humaneval.py` | HumanEval (164 problems; 50 sampled) | Signatures + docstrings given — removes naming noise to test *core reasoning*. |
+| `eval_humanevalplus.py` | HumanEval+ (164 problems; 50 sampled) | Same problems, ~80× more tests — exposes *edge-case bugs* HumanEval misses. |
 
 Every problem records: prompt, generated code, stdout, stderr, first-attempt
 result, corrected code, corrected result. The self-correction loop runs at
