@@ -1,0 +1,930 @@
+task_id,text,generated_code,stdout,stderr,returncode,result,corrected_code,corrected_result
+11,Write a python function to remove first and last occurrence of a given character from the string.,"def remove_first_last(s, char):
+    first = s.find(char)
+    if first == -1:
+        return s
+    last = s.rfind(char)
+    if first == last:
+        return s[:first] + s[first+1:]
+    return s[:first] + s[first+1:last] + s[last+1:]",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpk6lrc05d.py"", line 10, in <module>
+    assert remove_Occ(""hello"",""l"") == ""heo""
+           ^^^^^^^^^^
+NameError: name 'remove_Occ' is not defined
+",1,runtime_error,"def remove_Occ(s, char):
+    first = s.find(char)
+    if first == -1:
+        return s
+    last = s.rfind(char)
+    if first == last:
+        return s[:first] + s[first+1:]
+    return s[:first] + s[first+1:last] + s[last+1:]",pass
+12,Write a function to sort a given matrix in ascending order according to the sum of its rows.,"def sort_matrix_by_row_sum(matrix):
+    return sorted(matrix, key=sum)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpegzwczl6.py"", line 4, in <module>
+    assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]
+           ^^^^^^^^^^^
+NameError: name 'sort_matrix' is not defined
+",1,runtime_error,"def sort_matrix(matrix):
+    return sorted(matrix, key=sum)",pass
+14,Write a python function to find the volume of a triangular prism.,"def triangular_prism_volume(base, triangle_height, prism_length):
+    """"""
+    Calculate the volume of a triangular prism.
+    
+    Args:
+        base (float): The base length of the triangular face.
+        triangle_height (float): The perpendicular height of the triangular face.
+        prism_length (float): The length of the prism (distance between the two triangular faces).
+    
+    Returns:
+        float: The volume of the triangular prism.
+    """"""
+    return 0.5 * base * triangle_height * prism_length",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpg7zawb6x.py"", line 15, in <module>
+    assert find_Volume(10,8,6) == 240
+           ^^^^^^^^^^^
+NameError: name 'find_Volume' is not defined
+",1,runtime_error,"def find_Volume(base, triangle_height, prism_length):
+    """"""
+    Calculate the volume of a triangular prism.
+    
+    Args:
+        base (float): The base length of the triangular face.
+        triangle_height (float): The perpendicular height of the triangular face.
+        prism_length (float): The length of the prism (distance between the two triangular faces).
+    
+    Returns:
+        float: The volume of the triangular prism.
+    """"""
+    return 0.5 * base * triangle_height * prism_length",pass
+16,Write a function to that returns true if the input string contains sequences of lowercase letters joined with an underscore and false otherwise.,"import re
+
+def has_lower_underscore_sequence(text):
+    return bool(re.search(r'[a-z]+_[a-z]+', text))",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmptygvmius.py"", line 6, in <module>
+    assert text_lowercase_underscore(""aab_cbbbc"")==(True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'text_lowercase_underscore' is not defined
+",1,runtime_error,"import re
+
+def text_lowercase_underscore(text):
+    return bool(re.search(r'[a-z]+_[a-z]+', text))",assertion_error
+17,Write a function that returns the perimeter of a square given its side length as input.,"def square_perimeter(side_length):
+    return 4 * side_length",,,0,pass,,skipped
+18,Write a function to remove characters from the first string which are present in the second string.,"def remove_chars(first, second):
+    second_set = set(second)
+    return """".join(char for char in first if char not in second_set)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp21pv38kx.py"", line 5, in <module>
+    assert remove_dirty_chars(""probasscurve"", ""pros"") == 'bacuve'
+           ^^^^^^^^^^^^^^^^^^
+NameError: name 'remove_dirty_chars' is not defined
+",1,runtime_error,"def remove_dirty_chars(first, second):
+    second_set = set(second)
+    return """".join(char for char in first if char not in second_set)",pass
+19,Write a function to find whether a given array of integers contains any duplicate element.,"def has_duplicates(arr):
+    seen = set()
+    for num in arr:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmppk9fpebx.py"", line 9, in <module>
+    assert test_duplicate(([1,2,3,4,5]))==False
+           ^^^^^^^^^^^^^^
+NameError: name 'test_duplicate' is not defined. Did you mean: 'has_duplicates'?
+",1,runtime_error,"def test_duplicate(arr):
+    seen = set()
+    for num in arr:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False",pass
+20,Write a function to check if the given number is woodball or not.,"def is_woodball(num):
+    if num < 1:
+        return False
+    target = num + 1
+    n = 1
+    while True:
+        current = n * (2 ** n)
+        if current == target:
+            return True
+        if current > target:
+            return False
+        n += 1",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmptewj6s3_.py"", line 14, in <module>
+    assert is_woodall(383) == True
+           ^^^^^^^^^^
+NameError: name 'is_woodall' is not defined. Did you mean: 'is_woodball'?
+",1,runtime_error,"def is_woodall(num):
+    if num < 1:
+        return False
+    target = num + 1
+    n = 1
+    while True:
+        current = n * (2 ** n)
+        if current == target:
+            return True
+        if current > target:
+            return False
+        n += 1",pass
+56,Write a python function to check if a given number is one less than twice its reverse.,"def is_one_less_than_twice_reverse(n):
+    if not isinstance(n, int) or n < 0:
+        return False
+    
+    original = n
+    rev = 0
+    while n > 0:
+        rev = rev * 10 + n % 10
+        n //= 10
+    
+    return original == 2 * rev - 1",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp4n9rm38x.py"", line 13, in <module>
+    assert check(70) == False
+           ^^^^^
+NameError: name 'check' is not defined
+",1,runtime_error,"def check(n):
+    if not isinstance(n, int) or n < 0:
+        return False
+    
+    original = n
+    rev = 0
+    while n > 0:
+        rev = rev * 10 + n % 10
+        n //= 10
+    
+    return original == 2 * rev - 1",pass
+57,Write a python function to find the largest number that can be formed with the given list of digits.,"def largest_number(digits):
+    if not digits:
+        return 0
+    digits.sort(reverse=True)
+    return int(''.join(map(str, digits)))",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp5ixe5na1.py"", line 7, in <module>
+    assert find_Max_Num([1,2,3]) == 321
+           ^^^^^^^^^^^^
+NameError: name 'find_Max_Num' is not defined
+",1,runtime_error,"def find_Max_Num(digits):
+    if not digits:
+        return 0
+    digits.sort(reverse=True)
+    return int(''.join(map(str, digits)))",pass
+58,Write a python function to check whether the given two integers have opposite sign or not.,"def have_opposite_signs(a, b):
+    return a * b < 0",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp439x7jok.py"", line 4, in <module>
+    assert opposite_Signs(1,-2) == True
+           ^^^^^^^^^^^^^^
+NameError: name 'opposite_Signs' is not defined. Did you mean: 'have_opposite_signs'?
+",1,runtime_error,"def opposite_Signs(a, b):
+    return a * b < 0",pass
+59,Write a function to find the nth octagonal number.,"def octagonal_number(n):
+    """"""
+    Calculate the nth octagonal number.
+    
+    Formula: O_n = n * (3n - 2)
+    
+    Args:
+        n (int): A positive integer representing the position in the sequence.
+        
+    Returns:
+        int: The nth octagonal number.
+        
+    Raises:
+        ValueError: If n is not a positive integer.
+    """"""
+    if not isinstance(n, int) or n < 1:
+        raise ValueError(""n must be a positive integer"")
+    
+    return n * (3 * n - 2)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpg04cs0l6.py"", line 21, in <module>
+    assert is_octagonal(5) == 65
+           ^^^^^^^^^^^^
+NameError: name 'is_octagonal' is not defined
+",1,runtime_error,"def is_octagonal(n):
+    """"""
+    Calculate the nth octagonal number.
+    
+    Formula: O_n = n * (3n - 2)
+    
+    Args:
+        n (int): A positive integer representing the position in the sequence.
+        
+    Returns:
+        int: The nth octagonal number.
+        
+    Raises:
+        ValueError: If n is not a positive integer.
+    """"""
+    if not isinstance(n, int) or n < 1:
+        raise ValueError(""n must be a positive integer"")
+    
+    return n * (3 * n - 2)",pass
+61,Write a python function to count the number of substrings with the sum of digits equal to their length.,"def count_substrings(s):
+    count = {0: 1}
+    prefix = 0
+    result = 0
+    for ch in s:
+        prefix += int(ch) - 1
+        result += count.get(prefix, 0)
+        count[prefix] = count.get(prefix, 0) + 1
+    return result",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp7m_lcvlx.py"", line 11, in <module>
+    assert count_Substrings('112112') == 6
+           ^^^^^^^^^^^^^^^^
+NameError: name 'count_Substrings' is not defined. Did you mean: 'count_substrings'?
+",1,runtime_error,"def count_Substrings(s):
+    count = {0: 1}
+    prefix = 0
+    result = 0
+    for ch in s:
+        prefix += int(ch) - 1
+        result += count.get(prefix, 0)
+        count[prefix] = count.get(prefix, 0) + 1
+    return result",pass
+62,Write a python function to find smallest number in a list.,"def find_smallest(numbers):
+    """"""
+    Returns the smallest number in a list.
+    Returns None if the list is empty.
+    """"""
+    if not numbers:
+        return None
+    smallest = numbers[0]
+    for num in numbers:
+        if num < smallest:
+            smallest = num
+    return smallest",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpa5mc3174.py"", line 14, in <module>
+    assert smallest_num([10, 20, 1, 45, 99]) == 1
+           ^^^^^^^^^^^^
+NameError: name 'smallest_num' is not defined
+",1,runtime_error,"def smallest_num(numbers):
+    """"""
+    Returns the smallest number in a list.
+    Returns None if the list is empty.
+    """"""
+    if not numbers:
+        return None
+    smallest = numbers[0]
+    for num in numbers:
+        if num < smallest:
+            smallest = num
+    return smallest",pass
+63,Write a function to find the maximum difference between available pairs in the given tuple list.,"def max_pair_difference(tuple_list):
+    if not tuple_list:
+        return None
+    return max(abs(a - b) for a, b in tuple_list)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpb3gwxod8.py"", line 6, in <module>
+    assert max_difference([(3, 5), (1, 7), (10, 3), (1, 2)]) == 7
+           ^^^^^^^^^^^^^^
+NameError: name 'max_difference' is not defined. Did you mean: 'max_pair_difference'?
+",1,runtime_error,"def max_difference(tuple_list):
+    if not tuple_list:
+        return None
+    return max(abs(a - b) for a, b in tuple_list)",pass
+64,Write a function to sort a list of tuples using the second value of each tuple.,"def sort_by_second_value(tuple_list):
+    """"""Sort a list of tuples by the second element of each tuple.""""""
+    return sorted(tuple_list, key=lambda x: x[1])",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpz1kyzy_3.py"", line 5, in <module>
+    assert subject_marks([('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])==[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
+           ^^^^^^^^^^^^^
+NameError: name 'subject_marks' is not defined
+",1,runtime_error,"def subject_marks(tuple_list):
+    """"""Sort a list of tuples by the second element of each tuple.""""""
+    return sorted(tuple_list, key=lambda x: x[1])",pass
+65,Write a function to flatten a list and sum all of its elements.,"def flatten_and_sum(nested_list):
+    total = 0
+    for element in nested_list:
+        if isinstance(element, list):
+            total += flatten_and_sum(element)
+        else:
+            total += element
+    return total",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpty_wpark.py"", line 10, in <module>
+    assert recursive_list_sum(([1, 2, [3,4],[5,6]]))==21
+           ^^^^^^^^^^^^^^^^^^
+NameError: name 'recursive_list_sum' is not defined
+",1,runtime_error,"def recursive_list_sum(nested_list):
+    total = 0
+    for element in nested_list:
+        if isinstance(element, list):
+            total += recursive_list_sum(element)
+        else:
+            total += element
+    return total",pass
+66,Write a python function to count the number of positive numbers in a list.,"def count_positive(numbers):
+    return sum(1 for n in numbers if n > 0)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp4rno1ri1.py"", line 4, in <module>
+    assert pos_count([1,-2,3,-4]) == 2
+           ^^^^^^^^^
+NameError: name 'pos_count' is not defined
+",1,runtime_error,"def pos_count(numbers):
+    return sum(1 for n in numbers if n > 0)",pass
+67,Write a function to find the number of ways to partition a set of Bell numbers.,"def bell_number(n):
+    if n < 0:
+        raise ValueError(""n must be non-negative"")
+    if n == 0:
+        return 1
+    
+    prev = [1]
+    for i in range(1, n + 1):
+        curr = [0] * (i + 1)
+        curr[0] = prev[-1]
+        for j in range(1, i + 1):
+            curr[j] = curr[j - 1] + prev[j - 1]
+        prev = curr
+    
+    return prev[0]",,,0,pass,,skipped
+68,Write a python function to check whether the given array is monotonic or not.,"def is_monotonic(arr):
+    if len(arr) <= 1:
+        return True
+    
+    increasing = decreasing = True
+    
+    for i in range(len(arr) - 1):
+        if arr[i] < arr[i + 1]:
+            decreasing = False
+        elif arr[i] > arr[i + 1]:
+            increasing = False
+        
+        if not increasing and not decreasing:
+            return False
+    
+    return True",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmphx03offs.py"", line 18, in <module>
+    assert is_Monotonic([6, 5, 4, 4]) == True
+           ^^^^^^^^^^^^
+NameError: name 'is_Monotonic' is not defined. Did you mean: 'is_monotonic'?
+",1,runtime_error,"def is_Monotonic(arr):
+    if len(arr) <= 1:
+        return True
+    
+    increasing = decreasing = True
+    
+    for i in range(len(arr) - 1):
+        if arr[i] < arr[i + 1]:
+            decreasing = False
+        elif arr[i] > arr[i + 1]:
+            increasing = False
+        
+        if not increasing and not decreasing:
+            return False
+    
+    return True",pass
+69,Write a function to check whether a list contains the given sublist or not.,"def contains_sublist(lst, sublist):
+    if not sublist:
+        return True
+    if len(sublist) > len(lst):
+        return False
+    sub_len = len(sublist)
+    for i in range(len(lst) - sub_len + 1):
+        if lst[i:i + sub_len] == sublist:
+            return True
+    return False",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpx61bck2y.py"", line 12, in <module>
+    assert is_sublist([2,4,3,5,7],[3,7])==False
+           ^^^^^^^^^^
+NameError: name 'is_sublist' is not defined
+",1,runtime_error,"def is_sublist(lst, sublist):
+    if not sublist:
+        return True
+    if len(sublist) > len(lst):
+        return False
+    sub_len = len(sublist)
+    for i in range(len(lst) - sub_len + 1):
+        if lst[i:i + sub_len] == sublist:
+            return True
+    return False",pass
+70,Write a function to find whether all the given tuples have equal length or not.,"def all_equal_length(tuples):
+    it = iter(tuples)
+    try:
+        first_len = len(next(it))
+    except StopIteration:
+        return True
+    return all(len(t) == first_len for t in it)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp4_zapcp8.py"", line 9, in <module>
+    assert get_equal([(11, 22, 33), (44, 55, 66)]) == True
+           ^^^^^^^^^
+NameError: name 'get_equal' is not defined
+",1,runtime_error,"def get_equal(tuples):
+    it = iter(tuples)
+    try:
+        first_len = len(next(it))
+    except StopIteration:
+        return True
+    return all(len(t) == first_len for t in it)",pass
+71,Write a function to sort a list of elements.,"def sort_list(elements, key=None, reverse=False):
+    return sorted(elements, key=key, reverse=reverse)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp8hawpc6t.py"", line 4, in <module>
+    assert comb_sort([5, 15, 37, 25, 79]) == [5, 15, 25, 37, 79]
+           ^^^^^^^^^
+NameError: name 'comb_sort' is not defined
+",1,runtime_error,"def comb_sort(elements, key=None, reverse=False):
+    return sorted(elements, key=key, reverse=reverse)",pass
+72,Write a python function to check whether the given number can be represented as the difference of two squares or not.,"def is_difference_of_squares(n):
+    """"""
+    Returns True if n can be expressed as a^2 - b^2 for some integers a and b.
+    
+    Mathematically, n = a^2 - b^2 = (a-b)(a+b). Since (a-b) and (a+b) have
+    the same parity, their product n must be either odd or divisible by 4.
+    Equivalently, n cannot be congruent to 2 modulo 4.
+    """"""
+    return n % 4 != 2",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpjkqjgqla.py"", line 11, in <module>
+    assert dif_Square(5) == True
+           ^^^^^^^^^^
+NameError: name 'dif_Square' is not defined
+",1,runtime_error,"def dif_Square(n):
+    """"""
+    Returns True if n can be expressed as a^2 - b^2 for some integers a and b.
+    
+    Mathematically, n = a^2 - b^2 = (a-b)(a+b). Since (a-b) and (a+b) have
+    the same parity, their product n must be either odd or divisible by 4.
+    Equivalently, n cannot be congruent to 2 modulo 4.
+    """"""
+    return n % 4 != 2",pass
+74,Write a function to check whether it follows the sequence given in the patterns array.,"def follows_pattern(pattern, words):
+    if isinstance(words, str):
+        words = words.split()
+    
+    if len(pattern) != len(words):
+        return False
+    
+    pattern_to_word = {}
+    word_to_pattern = {}
+    
+    for p, w in zip(pattern, words):
+        if p in pattern_to_word:
+            if pattern_to_word[p] != w:
+                return False
+        else:
+            if w in word_to_pattern:
+                return False
+            pattern_to_word[p] = w
+            word_to_pattern[w] = p
+    
+    return True",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpeddgk81y.py"", line 23, in <module>
+    assert is_samepatterns([""red"",""green"",""green""], [""a"", ""b"", ""b""])==True
+           ^^^^^^^^^^^^^^^
+NameError: name 'is_samepatterns' is not defined
+",1,runtime_error,"def is_samepatterns(pattern, words):
+    if isinstance(words, str):
+        words = words.split()
+    
+    if len(pattern) != len(words):
+        return False
+    
+    pattern_to_word = {}
+    word_to_pattern = {}
+    
+    for p, w in zip(pattern, words):
+        if p in pattern_to_word:
+            if pattern_to_word[p] != w:
+                return False
+        else:
+            if w in word_to_pattern:
+                return False
+            pattern_to_word[p] = w
+            word_to_pattern[w] = p
+    
+    return True",pass
+75,Write a function to find tuples which have all elements divisible by k from the given list of tuples.,"def get_divisible_tuples(tuples_list, k):
+    """"""
+    Return a list of tuples from tuples_list where all elements are divisible by k.
+    """"""
+    return [t for t in tuples_list if all(x % k == 0 for x in t)]
+
+
+if __name__ == ""__main__"":
+    # Example usage
+    tuples_list = [(2, 4, 6), (3, 6, 9), (10, 20), (7, 14)]
+    k = 2
+    print(get_divisible_tuples(tuples_list, k))","[(2, 4, 6), (10, 20)]
+","Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp7mhrg61n.py"", line 14, in <module>
+    assert find_tuples([(6, 24, 12), (7, 9, 6), (12, 18, 21)], 6) == [(6, 24, 12)]
+           ^^^^^^^^^^^
+NameError: name 'find_tuples' is not defined
+",1,runtime_error,"def find_tuples(tuples_list, k):
+    """"""
+    Return a list of tuples from tuples_list where all elements are divisible by k.
+    """"""
+    return [t for t in tuples_list if all(x % k == 0 for x in t)]
+
+
+if __name__ == ""__main__"":
+    # Example usage
+    tuples_list = [(2, 4, 6), (3, 6, 9), (10, 20), (7, 14)]
+    k = 2
+    print(find_tuples(tuples_list, k))",pass
+77,Write a python function to find whether a number is divisible by 11.,"def is_divisible_by_11(n):
+    return n % 11 == 0",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp38nc45pm.py"", line 4, in <module>
+    assert is_Diff (12345) == False
+           ^^^^^^^
+NameError: name 'is_Diff' is not defined
+",1,runtime_error,"def is_Diff(n):
+    return n % 11 == 0",pass
+79,Write a python function to check whether the length of the word is odd or not.,"def is_odd_length(word):
+    return len(word) % 2 != 0",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp6x20ngj7.py"", line 4, in <module>
+    assert word_len(""Hadoop"") == False
+           ^^^^^^^^
+NameError: name 'word_len' is not defined
+",1,runtime_error,"def word_len(word):
+    return len(word) % 2 != 0",pass
+80,Write a function to find the nth tetrahedral number.,"def tetrahedral(n):
+    """"""
+    Calculate the nth tetrahedral number.
+    
+    Args:
+        n (int): A non-negative integer.
+        
+    Returns:
+        int: The nth tetrahedral number.
+        
+    Raises:
+        ValueError: If n is negative.
+    """"""
+    if n < 0:
+        raise ValueError(""n must be a non-negative integer"")
+    return n * (n + 1) * (n + 2) // 6",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp404dcyau.py"", line 18, in <module>
+    assert tetrahedral_number(5) == 35
+           ^^^^^^^^^^^^^^^^^^
+NameError: name 'tetrahedral_number' is not defined
+",1,runtime_error,"def tetrahedral_number(n):
+    """"""
+    Calculate the nth tetrahedral number.
+    
+    Args:
+        n (int): A non-negative integer.
+        
+    Returns:
+        int: The nth tetrahedral number.
+        
+    Raises:
+        ValueError: If n is negative.
+    """"""
+    if n < 0:
+        raise ValueError(""n must be a non-negative integer"")
+    return n * (n + 1) * (n + 2) // 6",pass
+82,Write a function to find the volume of a sphere.,"import math
+
+def sphere_volume(radius):
+    """"""
+    Calculate the volume of a sphere given its radius.
+    
+    Args:
+        radius (float): The radius of the sphere.
+        
+    Returns:
+        float: The volume of the sphere.
+    """"""
+    return (4/3) * math.pi * radius ** 3",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpqzx98ss_.py"", line 15, in <module>
+    assert math.isclose(volume_sphere(10), 4188.790204786391, rel_tol=0.001)
+                        ^^^^^^^^^^^^^
+NameError: name 'volume_sphere' is not defined
+",1,runtime_error,"import math
+
+def volume_sphere(radius):
+    """"""
+    Calculate the volume of a sphere given its radius.
+    
+    Args:
+        radius (float): The radius of the sphere.
+        
+    Returns:
+        float: The volume of the sphere.
+    """"""
+    return (4/3) * math.pi * radius ** 3",pass
+83,Write a python function to find the character made by adding the ASCII value of all the characters of the given string modulo 26.,"def find_char(s):
+    total = sum(ord(c) for c in s)
+    return chr((total % 26) + ord('a'))",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp_iz5q0cn.py"", line 5, in <module>
+    assert get_Char(""abc"") == ""f""
+           ^^^^^^^^
+NameError: name 'get_Char' is not defined
+",1,runtime_error,"def get_Char(s):
+    total = sum(ord(c) - ord('a') + 1 for c in s)
+    return chr((total - 1) % 26 + ord('a'))",pass
+84,Write a function to find the nth number in the newman conway sequence.,"def newman_conway(n):
+    if n <= 0:
+        raise ValueError(""n must be a positive integer"")
+    if n <= 2:
+        return 1
+    
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    dp[2] = 1
+    
+    for i in range(3, n + 1):
+        dp[i] = dp[dp[i - 1]] + dp[i - dp[i - 1]]
+    
+    return dp[n]",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp9q07zqqz.py"", line 16, in <module>
+    assert sequence(10) == 6
+           ^^^^^^^^
+NameError: name 'sequence' is not defined
+",1,runtime_error,"def sequence(n):
+    if n <= 0:
+        raise ValueError(""n must be a positive integer"")
+    if n <= 2:
+        return 1
+    
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    dp[2] = 1
+    
+    for i in range(3, n + 1):
+        dp[i] = dp[dp[i - 1]] + dp[i - dp[i - 1]]
+    
+    return dp[n]",pass
+85,Write a function to find the surface area of a sphere.,"import math
+
+def sphere_surface_area(radius):
+    """"""
+    Calculate the surface area of a sphere.
+    
+    Args:
+        radius (float): The radius of the sphere.
+        
+    Returns:
+        float: The surface area of the sphere.
+        
+    Raises:
+        ValueError: If the radius is negative.
+    """"""
+    if radius < 0:
+        raise ValueError(""Radius cannot be negative."")
+    return 4 * math.pi * radius ** 2",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpsmwyfpw2.py"", line 20, in <module>
+    assert math.isclose(surfacearea_sphere(10), 1256.6370614359173, rel_tol=0.001)
+                        ^^^^^^^^^^^^^^^^^^
+NameError: name 'surfacearea_sphere' is not defined
+",1,runtime_error,"import math
+
+def surfacearea_sphere(radius):
+    """"""
+    Calculate the surface area of a sphere.
+    
+    Args:
+        radius (float): The radius of the sphere.
+        
+    Returns:
+        float: The surface area of the sphere.
+        
+    Raises:
+        ValueError: If the radius is negative.
+    """"""
+    if radius < 0:
+        raise ValueError(""Radius cannot be negative."")
+    return 4 * math.pi * radius ** 2",pass
+86,Write a function to find nth centered hexagonal number.,"def centered_hexagonal(n):
+    if not isinstance(n, int) or n < 1:
+        raise ValueError(""n must be a positive integer"")
+    return 3 * n * (n - 1) + 1",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp656dmp0n.py"", line 6, in <module>
+    assert centered_hexagonal_number(10) == 271
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'centered_hexagonal_number' is not defined. Did you mean: 'centered_hexagonal'?
+",1,runtime_error,"def centered_hexagonal_number(n):
+    if not isinstance(n, int) or n < 1:
+        raise ValueError(""n must be a positive integer"")
+    return 3 * n * (n - 1) + 1",pass
+87,Write a function to merge three dictionaries into a single dictionary.,"def merge_three_dicts(d1, d2, d3):
+    return {**d1, **d2, **d3}",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpui11m5zd.py"", line 4, in <module>
+    assert merge_dictionaries_three({ ""R"": ""Red"", ""B"": ""Black"", ""P"": ""Pink"" }, { ""G"": ""Green"", ""W"": ""White"" },{ ""O"": ""Orange"", ""W"": ""White"", ""B"": ""Black"" })=={'B': 'Black', 'R': 'Red', 'P': 'Pink', 'G': 'Green', 'W': 'White', 'O': 'Orange'}
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'merge_dictionaries_three' is not defined
+",1,runtime_error,"def merge_dictionaries_three(d1, d2, d3):
+    return {**d1, **d2, **d3}",assertion_error
+88,"Write a function to get the frequency of all the elements in a list, returned as a dictionary.","def get_frequency(lst):
+    frequency = {}
+    for item in lst:
+        frequency[item] = frequency.get(item, 0) + 1
+    return frequency",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp410ldij4.py"", line 7, in <module>
+    assert freq_count([10,10,10,10,20,20,20,20,40,40,50,50,30])==({10: 4, 20: 4, 40: 2, 50: 2, 30: 1})
+           ^^^^^^^^^^
+NameError: name 'freq_count' is not defined
+",1,runtime_error,"def freq_count(lst):
+    frequency = {}
+    for item in lst:
+        frequency[item] = frequency.get(item, 0) + 1
+    return frequency",pass
+89,Write a function to find the closest smaller number than n.,"def closest_smaller(n):
+    """"""
+    Returns the closest smaller number than n.
+    For integers, this is simply n - 1.
+    """"""
+    return n - 1",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpoyd_78ig.py"", line 8, in <module>
+    assert closest_num(11) == 10
+           ^^^^^^^^^^^
+NameError: name 'closest_num' is not defined
+",1,runtime_error,"def closest_num(n):
+    """"""
+    Returns the closest smaller number than n.
+    For integers, this is simply n - 1.
+    """"""
+    return n - 1",pass
+90,Write a python function to find the length of the longest word.,"def longest_word_length(text):
+    words = text.split()
+    if not words:
+        return 0
+    return max(len(word) for word in words)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp7fb4gty3.py"", line 7, in <module>
+    assert len_log([""python"",""PHP"",""bigdata""]) == 7
+           ^^^^^^^
+NameError: name 'len_log' is not defined
+",1,runtime_error,"def len_log(words):
+    if isinstance(words, str):
+        words = words.split()
+    if not words:
+        return 0
+    return max(len(word) for word in words)",pass
+91,Write a function to check if a string is present as a substring in a given list of string values.,"def is_substring_present(substring, string_list):
+    """"""
+    Check if a string is present as a substring in any value within a list of strings.
+    
+    Args:
+        substring (str): The substring to search for.
+        string_list (list[str]): The list of strings to search within.
+        
+    Returns:
+        bool: True if substring is found in any string, False otherwise.
+    """"""
+    return any(substring in s for s in string_list)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp2uws41ki.py"", line 14, in <module>
+    assert find_substring([""red"", ""black"", ""white"", ""green"", ""orange""],""ack"")==True
+           ^^^^^^^^^^^^^^
+NameError: name 'find_substring' is not defined
+",1,runtime_error,"def find_substring(string_list, substring):
+    """"""
+    Check if a string is present as a substring in any value within a list of strings.
+    
+    Args:
+        string_list (list[str]): The list of strings to search within.
+        substring (str): The substring to search for.
+        
+    Returns:
+        bool: True if substring is found in any string, False otherwise.
+    """"""
+    return any(substring in s for s in string_list)",pass
+92,Write a function to check whether the given number is undulating or not.,"def is_undulating(n):
+    s = str(abs(n))
+    if len(s) < 3:
+        return False
+    a, b = s[0], s[1]
+    if a == b:
+        return False
+    for i in range(2, len(s)):
+        if s[i] != (a if i % 2 == 0 else b):
+            return False
+    return True",,,0,pass,,skipped
+93,Write a function to calculate the value of 'a' to the power 'b'.,"def power(a, b):
+    return a ** b",,,0,pass,,skipped
+94,"Given a list of tuples, write a function that returns the first value of the tuple with the smallest second value.","def first_of_min_second(tuples):
+    return min(tuples, key=lambda x: x[1])[0]",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpnjbxx384.py"", line 4, in <module>
+    assert index_minimum([('Rash', 143), ('Manjeet', 200), ('Varsha', 100)]) == 'Varsha'
+           ^^^^^^^^^^^^^
+NameError: name 'index_minimum' is not defined
+",1,runtime_error,"def index_minimum(tuples):
+    return min(tuples, key=lambda x: x[1])[0]",pass
+95,Write a python function to find the length of the smallest list in a list of lists.,"def smallest_list_length(lists):
+    if not lists:
+        return 0
+    return min(len(lst) for lst in lists)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpq4zq5bpk.py"", line 6, in <module>
+    assert Find_Min_Length([[1],[1,2]]) == 1
+           ^^^^^^^^^^^^^^^
+NameError: name 'Find_Min_Length' is not defined
+",1,runtime_error,"def Find_Min_Length(lists):
+    if not lists:
+        return 0
+    return min(len(lst) for lst in lists)",pass
+96,Write a python function to find the number of divisors of a given integer.,"def count_divisors(n: int) -> int:
+    """"""Return the number of positive divisors of n.""""""
+    if n == 0:
+        raise ValueError(""Zero has infinitely many divisors."")
+    
+    n = abs(n)
+    count = 0
+    i = 1
+    while i * i <= n:
+        if n % i == 0:
+            count += 1 if i * i == n else 2
+        i += 1
+    return count",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmp6959d9_w.py"", line 15, in <module>
+    assert divisor(15) == 4
+           ^^^^^^^
+NameError: name 'divisor' is not defined
+",1,runtime_error,"def divisor(n: int) -> int:
+    """"""Return the number of positive divisors of n.""""""
+    if n == 0:
+        raise ValueError(""Zero has infinitely many divisors."")
+    
+    n = abs(n)
+    count = 0
+    i = 1
+    while i * i <= n:
+        if n % i == 0:
+            count += 1 if i * i == n else 2
+        i += 1
+    return count",pass
+97,"Write a function to find frequency of each element in a flattened list of lists, returned in a dictionary.","from collections import Counter
+from typing import List, Any, Dict
+
+def element_frequency(nested_list: List[Any]) -> Dict[Any, int]:
+    def flatten(lst):
+        for item in lst:
+            if isinstance(item, list):
+                yield from flatten(item)
+            else:
+                yield item
+    
+    return dict(Counter(flatten(nested_list)))",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpn9ebzueh.py"", line 14, in <module>
+    assert frequency_lists([[1, 2, 3, 2], [4, 5, 6, 2], [7, 8, 9, 5]])=={1: 1, 2: 3, 3: 1, 4: 1, 5: 2, 6: 1, 7: 1, 8: 1, 9: 1}
+           ^^^^^^^^^^^^^^^
+NameError: name 'frequency_lists' is not defined
+",1,runtime_error,"from collections import Counter
+from typing import List, Any, Dict
+
+def frequency_lists(nested_list: List[Any]) -> Dict[Any, int]:
+    def flatten(lst):
+        for item in lst:
+            if isinstance(item, list):
+                yield from flatten(item)
+            else:
+                yield item
+    
+    return dict(Counter(flatten(nested_list)))",pass
+98,Write a function to multiply all the numbers in a list and divide with the length of the list.,"def multiply_and_divide(numbers):
+    if not numbers:
+        raise ValueError(""List cannot be empty"")
+    
+    product = 1
+    for num in numbers:
+        product *= num
+    
+    return product / len(numbers)",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpi1by9wjc.py"", line 11, in <module>
+    assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?
+",1,runtime_error,"import math
+
+def multiply_num(numbers):
+    if not numbers:
+        raise ValueError(""List cannot be empty"")
+    
+    product = 1
+    for num in numbers:
+        product *= num
+    
+    return product / len(numbers)",pass
+99,"Write a function to convert the given decimal number to its binary equivalent, represented as a string with no leading zeros.","def decimal_to_binary(n):
+    if n == 0:
+        return ""0""
+    binary_digits = []
+    while n > 0:
+        binary_digits.append(str(n % 2))
+        n //= 2
+    return """".join(reversed(binary_digits))",,,0,pass,,skipped
+100,"Write a function to find the next smallest palindrome of a specified integer, returned as an integer.","def next_smallest_palindrome(n):
+    num = n + 1
+    while str(num) != str(num)[::-1]:
+        num += 1
+    return num",,,0,pass,,skipped
+101,Write a function to find the kth element in the given array using 1-based indexing.,"def find_kth_element(arr, k):
+    if k < 1 or k > len(arr):
+        raise IndexError(""k is out of bounds"")
+    return arr[k - 1]",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmptbur4t61.py"", line 6, in <module>
+    assert kth_element([12,3,5,7,19], 2) == 3
+           ^^^^^^^^^^^
+NameError: name 'kth_element' is not defined. Did you mean: 'find_kth_element'?
+",1,runtime_error,"def kth_element(arr, k):
+    if k < 1 or k > len(arr):
+        raise IndexError(""k is out of bounds"")
+    return arr[k - 1]",pass
+102,Write a function to convert a snake case string to camel case string.,"def snake_to_camel(snake_str):
+    components = snake_str.split('_')
+    components = [c for c in components if c]
+    if not components:
+        return """"
+    return components[0].lower() + ''.join(word.capitalize() for word in components[1:])",,"Traceback (most recent call last):
+  File ""/var/folders/rq/32p47s156l7gqkcsl_lbsxcr0000gn/T/tmpffbrmzto.py"", line 8, in <module>
+    assert snake_to_camel('python_program')=='PythonProgram'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+",1,assertion_error,"def snake_to_camel(snake_str):
+    components = snake_str.split('_')
+    components = [c for c in components if c]
+    if not components:
+        return """"
+    return ''.join(word.capitalize() for word in components)",pass

@@ -1,0 +1,5 @@
+openai>=2.32.0
+python-dotenv>=1.0.0
+datasets>=4.8.4
+pandas>=3.0.2
+streamlit>=1.56.0

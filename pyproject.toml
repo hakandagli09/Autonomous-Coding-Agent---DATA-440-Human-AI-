@@ -1,0 +1,15 @@
+[project]
+name = "coding-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "datasets>=4.8.4",
+    "dotenv>=0.9.9",
+    "groq>=1.1.1",
+    "openai>=2.32.0",
+    "pandas>=3.0.2",
+    "streamlit>=1.56.0",
+    "watchdog>=6.0.0",
+]
